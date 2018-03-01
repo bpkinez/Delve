@@ -32,7 +32,7 @@ namespace Delve.Models.Expressions
         {
             var expressions = new List<IExpression<TEntity>>();
 
-            if (query == null) { return expressions; }
+            if (string.IsNullOrEmpty(query)) { return expressions; }
 
             foreach (var subQuery in query.Split(','))
             {
